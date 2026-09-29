@@ -1,0 +1,78 @@
+{
+  "package": "obix-core-spec",
+  "dir": "core/obix-core-spec",
+  "importedBy": "scripts/recovery/import-packages.mjs",
+  "snapshot": "snap-20260924T142414Z",
+  "stage": "stage-2 lift-and-shift (base owner; later stages repair/merge)",
+  "sources": [
+    {
+      "label": "upstream:obix-monorepo-2026@4e5295a",
+      "repo": "obix-monorepo-2026",
+      "url": "https://github.com/obinexusmk2/obix-monorepo-2026",
+      "sha": "4e5295a09e3799f5490e1d655e15ab4bf865fbf7",
+      "path": "packages/obix-spec",
+      "license": "MIT",
+      "licenseFileUpstream": false,
+      "filesImported": 9,
+      "filesExcluded": 2
+    }
+  ],
+  "originalManifest": {
+    "name": "obix-spec",
+    "version": "0.2.1",
+    "license": "MIT",
+    "bin": null,
+    "scripts": {
+      "build": "tsc -p tsconfig.json",
+      "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+    }
+  },
+  "transforms": [
+    "package.json regenerated (lockstep version, exact internal pins, exports with \"types\" first, standard scripts)",
+    "tsconfig.json generated (NodeNext via tsconfig.base.json; removeComments: true, as the Level-0 lineage was built (its dist purity tests grep emitted JS))",
+    "internal specifiers renamed: none",
+    "relative imports given \".js\"/\"/index.js\" extensions: 0",
+    "LICENSE generated from the declared MIT license (upstream repo had no LICENSE file)"
+  ],
+  "localFixes": [
+    {
+      "stage": "stage-6",
+      "files": [
+        "README.md"
+      ],
+      "why": "Stage 6 docs: the retired bare Level-0 names (npm tombstones: `npm install obix-parser` cannot work) replaced by the scoped package names (D-01, migration-table.md)."
+    }
+  ],
+  "scopeScrub": {
+    "rule": "scripts/recovery/scrub-rules.mjs (brief: no other OBINexus projects)",
+    "replacementsPerFile": {}
+  },
+  "authoredOverlay": [],
+  "excluded": [
+    "dist/**",
+    "node_modules/**",
+    "lockfiles",
+    "tsconfig*.json (regenerated)",
+    ".gitignore",
+    ".github/**",
+    "coverage/**"
+  ],
+  "unresolvedRelativeImports": [],
+  "note": null,
+  "renamedFrom": [
+    {
+      "name": "@obinexusltd/obix-core-spec",
+      "dir": "core/obix-core-spec",
+      "stage": "unscoped-naming",
+      "why": "D-102 (2026-09-29): OBIX packages are named without an npm scope — previous name @obinexusltd/obix-core-spec, current name obix-core-spec (docs/recovery/unscoped-migration.md); the directory, version and exports are unchanged"
+    }
+  ],
+  "export": {
+    "from": "https://github.com/obinexusmk2/obix-monorepo",
+    "branch": "recovery/obix-api-preserving-rebuild",
+    "commit": "69cafc94910c1add865a520877617ac307668875",
+    "directory": "core/obix-core-spec",
+    "exportedBy": "scripts/release/export-repos.mjs",
+    "note": "a clean initial commit of this package; the monorepo history is not imported (D-103). Local machine paths in this record are replaced by <local workspace>."
+  }
+}
